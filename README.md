@@ -1,1 +1,1 @@
-# summary-stat-estimate-tool
+# estimating-sample-mean-standard-deviation
