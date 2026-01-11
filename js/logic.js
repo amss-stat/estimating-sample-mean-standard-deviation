@@ -42,7 +42,7 @@ async function getDistributionResult(dist, currentScenario, allFeatures) {
     const COMFORT_ZONES = {
         normal: { target: 20, range: [5, 25] },
         exp: { target: 10, range: [5, 20] },
-        lognormal: { target: 300, range: [10, 500] },
+        lognormal: { target: 300, range: [50, 400] },
         weibull: { target: 20, range: [5, 40] }
     };
     
@@ -126,7 +126,6 @@ export async function calculateBestDistribution(currentScenario, inputs) {
     const allFeatures = { n, m, a, b, q1, q3 };
     const warnings = [];
     
-    // ★★★ ASYMMETRY LOGIC - REVISED AND CORRECTED ★★★
     let left, right;
     // Prioritize stable quartiles (S2, S3) over min/max (S1) for asymmetry checks
     if (currentScenario === 's2' || currentScenario === 's3') {
@@ -149,7 +148,7 @@ export async function calculateBestDistribution(currentScenario, inputs) {
         if (relativeDiff < 0.01) { // 1% tolerance for strict symmetry
             const result = await getDistributionResult('normal', currentScenario, allFeatures);
             if (!result) throw new Error("Symmetric data failed Normal distribution calculation.");
-            return { bestFit: result, warnings: ["Data is strictly symmetric; Normal distribution was directly selected."] };
+            return { bestFit: result, warnings: ["Data is strictly symmetric; Normal distribution was recommended."] };
         }
         
         if (ratio >= 2) {
@@ -164,7 +163,7 @@ export async function calculateBestDistribution(currentScenario, inputs) {
     if (isBetaDomain) {
         const result = await getDistributionResult('beta', currentScenario, allFeatures);
         if (!result) throw new Error("Data in [0,1] failed Beta distribution calculation.");
-        return { bestFit: result, warnings: ["Data is in [0,1] range; Beta distribution was directly selected."] };
+        return { bestFit: result, warnings: ["Data is in [0,1] range; Beta distribution was recommended."] };
     } else {
         candidates = candidates.filter(d => d !== 'beta');
     }
@@ -172,8 +171,7 @@ export async function calculateBestDistribution(currentScenario, inputs) {
     if (excludeNormal) {
         candidates = candidates.filter(d => d !== 'normal');
     }
-    
-    // ★★★ EXPONENTIAL CHECK - REVISED AND CORRECTED ★★★
+
     if (n > 100) {
         if (currentScenario === 's2' || currentScenario === 's3') {
             const THEORETICAL_RATIO = 0.5847; // Math.log(4/3) / Math.log(2)
@@ -184,10 +182,10 @@ export async function calculateBestDistribution(currentScenario, inputs) {
             if (relativeError < 0.01) { // 1% tolerance
                 const result = await getDistributionResult('exp', currentScenario, allFeatures);
                 if (!result) throw new Error("Data with memoryless property failed Exponential calculation.");
-                return { bestFit: result, warnings: ["Data exhibits strong memoryless property; Exponential distribution was directly selected."] };
+                return { bestFit: result, warnings: ["Data exhibits strong memoryless property; Exponential distribution was recommended."] };
             }
             // If the observed ratio is very far from the theoretical one
-            if (relativeError > 2) { // 200% tolerance for exclusion
+            if (relativeError > 1) { // 100% tolerance for exclusion
                  candidates = candidates.filter(d => d !== 'exp');
             }
         }
@@ -211,7 +209,7 @@ export async function calculateBestDistribution(currentScenario, inputs) {
     results.sort((a, b) => a.loss - b.loss);
     
     let bestFit = results[0];
-    const TIE_BREAKING_RATIO = 1.001;
+    const TIE_BREAKING_RATIO = 1.01;
     const bestLoss = results[0].loss;
 
     for (const preferredDistName of PREFERENCE_ORDER_DEFAULT) {
@@ -227,8 +225,8 @@ export async function calculateBestDistribution(currentScenario, inputs) {
     const dataScale = (currentScenario === 's1' || currentScenario === 's3') ? (b - a) : (q3 - q1);
     
     if (dataScale > 0 && (rmse / dataScale) > 2) {
-        warnings.push("Warning: The best-fit distribution still has a large error relative to the data range. The result may not be reliable.");
-    } // 这里需要修改，指明我们的方法是数据驱动的方法
+        warnings.push("Warning: This tool is based on a data-driven framework and may not be entirely reliable in a few unforeseen circumstances. However, the method is highly scalable, and we welcome you to contact the authors so we can update the software to suit your data characteristics.");
+    } 
     
     return { bestFit, warnings };
 }
