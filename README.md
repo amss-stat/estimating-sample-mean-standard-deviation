@@ -60,7 +60,11 @@ If you use this tool or method in your research, please cite:
 > *Journal of Systems Science & Complexity.[accepted]*
 
 📄 Paper link:
-[https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml](https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml)
+👉 <a href="[https://amss-stat.github.io/estimating-sample-mean-standard-deviation/]"
+     target="_blank"
+     rel="noopener noreferrer">
+     Neural network-based estimation of sample mean and standard deviation from some quartiles.
+   </a>
 
 ---
 
