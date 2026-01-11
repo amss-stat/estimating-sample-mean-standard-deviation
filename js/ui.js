@@ -40,8 +40,7 @@ function updateUIForScenario(scenario) {
     if (isS1) ui.subtitle.textContent = 'From Sample Size, Minimum, Median, and Maximum';
     if (isS2) ui.subtitle.textContent = 'From Sample Size, First Quartile, Median, and Third Quartile';
     if (scenario === 's3') ui.subtitle.textContent = 'From All Available Statistics';
-    
-    // This now works correctly because the function name typo is fixed
+
     ui.resultContainer.classList.add('hidden');
     ui.resultText.textContent = ''; 
     ui.status.textContent = 'Please enter new values for the selected scenario.';
@@ -56,7 +55,7 @@ async function init() {
         ui.button.disabled = false;
     } catch (error) {
         console.error(error);
-        ui.status.textContent = '❌ Failed to load models. Check console and refresh.';
+        ui.status.textContent = '❌ Failed to load models. Please check your network connection and refresh.';
     }
 }
 
@@ -139,7 +138,7 @@ async function handlePredictionClick() {
             ui.status.textContent = `❌ Input Error: ${error.message}`;
         } else {
             console.error("An unexpected error occurred during prediction:", error);
-            ui.status.textContent = '❌ An unexpected error occurred. No suitable distribution found or calculation failed. Please check the console.';
+            ui.status.textContent = '❌ An unexpected error occurred. Please check the console or contact the author.';
         }
     } finally {
         ui.button.disabled = false;
