@@ -60,7 +60,7 @@ If you use this tool or method in your research, please cite:
 > *Journal of Systems Science & Complexity.[accepted]*
 
 📄 Paper link:
-👉 <a href="[https://amss-stat.github.io/estimating-sample-mean-standard-deviation/]"
+👉 <a href="https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml"
      target="_blank"
      rel="noopener noreferrer">
      Neural network-based estimation of sample mean and standard deviation from some quartiles.
@@ -77,7 +77,8 @@ If you use this tool or method in your research, please cite:
   * Extremely irregular summary statistics
 
 If you encounter such cases, we **strongly encourage you to contact us**.
-📧 **[zhangqinyuan19@mails.ucas.ac.cn](mailto:zhangqinyuan19@mails.ucas.ac.cn)**
+✉️ Contact: <a href="mailto:zhangqinyuan19@mails.ucas.ac.cn" style="text-decoration:none; color:#3498db;">
+zhangqinyuan19@mails.ucas.ac.cn</a>
 We actively expand the model library by training additional neural networks to improve performance in newly identified scenarios.
 
 ---
@@ -91,6 +92,7 @@ We welcome all forms of feedback, including:
 * Suggestions for new distributional settings
 
 Please contact the authors at:
-📧 **[zhangqinyuan19@mails.ucas.ac.cn](mailto:zhangqinyuan19@mails.ucas.ac.cn)**
+✉️ Contact: <a href="mailto:zhangqinyuan19@mails.ucas.ac.cn" style="text-decoration:none; color:#3498db;">
+zhangqinyuan19@mails.ucas.ac.cn</a>
 
 Your feedback will directly help improve the robustness and applicability of this tool.
