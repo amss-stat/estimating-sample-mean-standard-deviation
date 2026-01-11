@@ -3,7 +3,7 @@
 ## Overview
 
 This project provides a **neural network–based tool for estimating the sample mean and standard deviation from summary statistics**, including the median, range, and/or quartiles.
-The method is designed for situations where individual-level data are unavailable and only limited summary statistics can be accessed.
+The method is designed for situations where individual-level data are unavailable and only limited summary statistics can be accessed, especially when the data is **skewed** or does **not** meet the normality assumption.
 
 The tool is deployed as a **lightweight web application** and can be accessed directly at:
 
@@ -25,8 +25,8 @@ The estimation procedure is based on **neural network models trained on large-sc
 
 Given a set of summary statistics (e.g., sample size, median, minimum/maximum, and/or quartiles), the tool:
 
-1. Infers candidate distribution parameters using pretrained neural networks
-2. Reconstructs the implied mean and standard deviation
+1. Infers sample mean and standard deviation using pretrained neural networks
+2. Reconstruct the latent distribution
 3. Selects the best-fitting distribution by comparing theoretical and observed quantiles
 
 This framework enables accurate estimation even under **skewed or non-normal distributions**, where traditional methods often perform poorly.
@@ -41,7 +41,7 @@ Extensive simulation studies show that:
 * The improvement is particularly pronounced for:
 
   * **Skewed** data
-  * Situations where the **normality** assumption is violated
+  * Situations where the **normality** assumption is **violated**
 
 
 ---
