@@ -141,7 +141,7 @@ export async function calculateBestDistribution(currentScenario, inputs) {
         const ratio = Math.max(left, right) / Math.min(left, right);
         const relativeDiff = Math.abs(left - right) / (left + right);
 
-        if (ratio > 20) {
+        if (ratio > 25) {
             throw new InvalidInputError("Extreme asymmetry detected. Data may contain outliers, making estimation unreliable.");
         }
         
