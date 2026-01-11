@@ -1,4 +1,4 @@
-# Estimating Sample Mean and Standard Deviation from Some Quartiles
+# Estimating Sample Mean and SD from Some Quartiles
 
 ## Overview
 
