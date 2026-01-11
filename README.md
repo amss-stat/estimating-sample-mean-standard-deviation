@@ -9,7 +9,11 @@ The method is designed for situations where individual-level data are unavailabl
 
 The tool is deployed as a **lightweight web application** and can be accessed directly at:
 
-👉 **[https://amss-stat.github.io/estimating-sample-mean-standard-deviation/](https://amss-stat.github.io/estimating-sample-mean-standard-deviation/)**
+👉 <a href="https://amss-stat.github.io/estimating-sample-mean-standard-deviation/"
+     target="_blank"
+     rel="noopener noreferrer">
+     https://amss-stat.github.io/estimating-sample-mean-standard-deviation/
+   </a>
 
 All computations are performed locally in the browser, without requiring data upload or server-side processing.
 
@@ -53,7 +57,7 @@ If you use this tool or method in your research, please cite:
 
 > **Zhang, Qinyuan; Li, Qizhai (2025).**
 > *Neural network-based estimation of sample mean and standard deviation from some quartiles.*
-> *Journal of Systems Science & Complexity.*
+> *Journal of Systems Science & Complexity.[accepted]*
 
 📄 Paper link:
 [https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml](https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml)
