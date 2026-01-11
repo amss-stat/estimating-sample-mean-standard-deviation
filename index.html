@@ -61,7 +61,10 @@
                 </div>
             </div>
 
-            <button id="predict-button">Estimate</button>
+            <div class="button-container">
+                <button id="predict-button">Estimate</button>
+                <button id="reset-button">Reset</button>
+            </div> 
 
             <div id="result-container" class="hidden">
                 <h2>Results</h2>
@@ -71,8 +74,9 @@
         </main>
 
         <footer>
-            <p>A tool based on the research paper: [Your Paper Title Here]. 
-                <a href="[Link to Your Paper]" target="_blank">Read the paper</a>.
+            <p>A tool based on the paper: 
+                [ZHANG Qinyuan , LI Qizhai. Neural network-based estimation of sample mean and standard deviation from some quartiles. Journal of Systems Science & Complexity, 2025]. 
+                <a href="https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml" target="_blank">Click to read</a>.
             </p>
         </footer>
     </div>
@@ -82,9 +86,19 @@
     <script src="https://cdn.jsdelivr.net/npm/jstat@latest/dist/jstat.min.js"></script>
     
     <!-- Application Logic -->
-    <script src="js/main.js"></script>
+    <script type="module" src="js/ui.js"></script>
 
 </body>
 
 </html>
+
+
+
+
+
+
+
+
+
+
 
