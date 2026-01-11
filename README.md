@@ -43,7 +43,6 @@ Extensive simulation studies show that:
   * **Skewed** data
   * Situations where the **normality** assumption is **violated**
 
-
 ---
 
 ## Reference
@@ -82,8 +81,6 @@ We welcome all forms of feedback, including:
 * Suggestions for new distributional settings
 
 Please contact the authors at:
-
 📧 **[zhangqinyuan19@mails.ucas.ac.cn](mailto:zhangqinyuan19@mails.ucas.ac.cn)**
 
 Your feedback will directly help improve the robustness and applicability of this tool.
-
