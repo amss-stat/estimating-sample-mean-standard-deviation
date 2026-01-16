@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://amss-stat.github.io/estimating-sample-mean-standard-deviation/sitemap.xml
