@@ -37,8 +37,8 @@ function updateUIForScenario(scenario) {
     ui.groups.q1.classList.toggle('hidden', isS1);
     ui.groups.q3.classList.toggle('hidden', isS1);
 
-    if (isS1) ui.subtitle.textContent = 'From Sample Size, Minimum, Median, and Maximum';
-    if (isS2) ui.subtitle.textContent = 'From Sample Size, First Quartile, Median, and Third Quartile';
+    if (isS1) ui.subtitle.textContent = 'From Sample Size, Minimum, Median, and Maximum (Range)';
+    if (isS2) ui.subtitle.textContent = 'From Sample Size, First Quartile, Median, and Third Quartile (Interquartile Range)';
     if (scenario === 's3') ui.subtitle.textContent = 'From All Available Statistics';
 
     ui.resultContainer.classList.add('hidden');
