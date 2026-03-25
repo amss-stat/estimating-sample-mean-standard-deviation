@@ -57,7 +57,7 @@ If you use this tool or method in your research, please cite:
 
 > **Zhang, Qinyuan; Li, Qizhai.**
 > *Neural network-based estimation of sample mean and standard deviation from some quartiles.*
-> *J Syst Sci Complex(2026).*
+> *J Syst Sci Complex (2026).*
 
 📄 Paper link:
 👉 <a href="[https://sysmath.cjoe.ac.cn/jssc/EN/abstract/abstract56237.shtml](https://doi.org/10.1007/s11424-026-5481-4)"
